@@ -1,0 +1,106 @@
+/* stylelint-disable keyframes-name-pattern */
+@keyframes carouselC2l {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes carouselR2c {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes carouselC2r {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes carouselL2c {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.container {
+  position: relative;
+  overflow: hidden;
+}
+
+.container.forward .pre {
+  animation: carouselC2l 0.2s ease-in-out;
+}
+
+.container.forward .current {
+  animation: carouselR2c 0.2s ease-in-out;
+}
+
+.container.backward .pre {
+  animation: carouselC2r 0.2s ease-in-out;
+}
+
+.container.backward .current {
+  animation: carouselL2c 0.2s ease-in-out;
+}
+
+.contentWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  position: relative;
+  width: calc(100% - 30px);
+  display: flex;
+  justify-content: center;
+}
+
+.content.pre {
+  z-index: 9;
+}
+
+.content.current {
+  z-index: 10;
+}
+
+.icon {
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #2c2c2c;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.icon.icon-left {
+  left: 8px;
+}
+
+.icon.icon-right {
+  right: 8px;
+}
